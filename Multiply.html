@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Operation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #80b4bb;
+        }
+
+        .calculator {
+            display: inline-block;
+            border: 2px solid #00796b;
+            border-radius: 10px;
+            padding: 20px;
+            background: #ab6666;
+        }
+
+        .calculator input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        .calculator button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .calculator button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Multiplication Operation</h1>
+    <div class="calculator">
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <br>
+        <button onclick="performMultiplication()">Multiply</button>
+        <h2>Result: <span id="result">0</span></h2>
+    </div>
+    <script>
+        function multiplyNumbers(a, b) {
+            return a * b;
+        }
+
+        function performMultiplication() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            const result = multiplyNumbers(num1, num2);
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+</body>
+
+</html>
